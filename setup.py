@@ -62,6 +62,7 @@ setup(
     version='0.0.1',
     author='Jasper Jenkins',
     author_email='jasper.vs.jenkins@gmail.com',
+    install_requires=['cmake'],
     ext_modules=[CMakeExtension('dicom_parse')],
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
