@@ -22,7 +22,7 @@ class get_pybind_include(object):
 
 ext_modules = [
     Extension(
-        'python_example',
+        'dicom_parse',
         ['src/main.cpp'],
         include_dirs=[
             # Path to pybind11 headers
@@ -97,7 +97,7 @@ setup(
     author_email='jasper.vs.jenkins@gmail.com',
     ext_modules=ext_modules,
     install_requires=[
-        'pybind11>=2.2',
+        'pybind11',
         'numpy'
     ],
     cmdclass={'build_ext': BuildExt},
