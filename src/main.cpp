@@ -5,9 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <exception>
-#include "pybind11/pybind11.h"
-#include "pybind11/numpy.h"
-#include "jpeglib.h"
+#include <pybind11/pybind11.h>
+#include <pybind11/numpy.h>
+#include <jpeglib.h>
 
 namespace py = pybind11;
 
@@ -76,7 +76,6 @@ py::array_t<u_int8_t> read_dicom_image(
     throw std::exception();
   }
   auto pixels = py::array_t<u_int8_t>(py::array::ShapeContainer({1024, 1024}));
-  auto pixels_a = pixels.mutable_unchecked<2>();
   Element element;
   element.group = 77;
   element.tag = 77;

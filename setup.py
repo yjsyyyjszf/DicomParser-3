@@ -25,14 +25,15 @@ ext_modules = [
         'dicom_parse',
         ['src/main.cpp'],
         include_dirs=[
-            "/usr/include",
             # Path to pybind11 headers
             get_pybind_include(),
             get_pybind_include(user=True),
+            '/usr/include/',
         ],
         library_dirs=[
-            "/usr/lib/x86_64-linux-gnu",
+            '/usr/lib/x86_64-linux-gnu/',
         ],
+        libraries=['libjpeg'],
         language='c++'
     ),
 ]
